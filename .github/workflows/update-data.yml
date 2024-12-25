@@ -1,71 +1,34 @@
-name: Update Words Data
+name: Deploy to GitHub Pages
 
 on:
-  workflow_dispatch:
-    inputs:
-      word:
-        description: "Mot à ajouter"
-        required: true
-      translation:
-        description: "Traduction"
-        required: true
-      usage:
-        description: "Usage"
-        required: true
+  push:
+    branches:
+      - main  # Déclencher l'action à chaque push sur la branche principale
 
 jobs:
-  update_data:
+  deploy:
     runs-on: ubuntu-latest
-
+    
     steps:
-      # Vérification des entrées reçues
-      - name: Vérifier les entrées
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the site
+        run: npm run build  # Lancer la commande de build pour ton projet
+
+      - name: Deploy to GitHub Pages
         run: |
-          echo "Mot: ${{ github.event.inputs.word }}"
-          echo "Traduction: ${{ github.event.inputs.translation }}"
-          echo "Usage: ${{ github.event.inputs.usage }}"
-
-      # Télécharger le fichier JSON actuel
-      - name: Télécharger le fichier JSON actuel
+          echo "const TOKEN = '${{ secrets.GITHUB_TOKEN }}';" >> .env  # Ajouter le token dans un fichier .env
+          
+      - name: Deploy to GitHub Pages
         run: |
-          echo "Téléchargement du fichier JSON existant..."
-          curl -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            -L "https://raw.githubusercontent.com/${{ github.repository }}/main/data/words.json" \
-            -o words.json
-
-          echo "Contenu avant mise à jour :"
-          cat words.json
-
-      # Ajouter les nouvelles données
-      - name: Ajouter les nouvelles données
-        run: |
-          WORD="${{ github.event.inputs.word }}"
-          TRANSLATION="${{ github.event.inputs.translation }}"
-          USAGE="${{ github.event.inputs.usage }}"
-
-          # Ajouter l'entrée au fichier JSON existant
-          jq ". + [{\"word\": \"$WORD\", \"translation\": \"$TRANSLATION\", \"usage\": \"$USAGE\"}]" words.json > updated_words.json || exit 1
-
-          echo "Contenu après mise à jour :"
-          cat updated_words.json
-
-      # Commit et push les modifications
-      - name: Commit et pousser les modifications
-        run: |
-          echo "Configuration Git..."
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config --global core.sshCommand "ssh -o StrictHostKeyChecking=no"
-
-          # Déplacer le fichier mis à jour
-          mv updated_words.json words.json
-
-          # Ajouter les modifications au commit
-          git add words.json
-          git diff --cached # Vérifie les différences avant de committer
-
-          # Faire un commit
-          git commit -m "Mise à jour du fichier words.json" || echo "Aucun changement à committer"
-
-          # Push des changements
-          git push origin main
+          # Lancer le déploiement, en fonction de ta configuration (par exemple, avec gh-pages)
+          npm run deploy

@@ -94,5 +94,101 @@
     "traduction": "Curtain",
     "pluriel": "Rideaux",
     "explication": "Pièce de tissu suspendue devant une fenêtre pour bloquer la lumière ou protéger l'intimité."
+  },
+    {
+    "mot": "Évier",
+    "traduction": "Sink",
+    "pluriel": "Éviers",
+    "explication": "Installé dans la cuisine ou la salle de bain, utilisé pour laver la vaisselle ou se laver les mains."
+  },
+  {
+    "mot": "Four",
+    "traduction": "Oven",
+    "pluriel": "Fours",
+    "explication": "Appareil utilisé pour cuire ou chauffer les aliments."
+  },
+  {
+    "mot": "Climatiseur",
+    "traduction": "Air conditioner",
+    "pluriel": "Climatiseurs",
+    "explication": "Appareil utilisé pour réguler la température et rafraîchir une pièce."
+  },
+  {
+    "mot": "Horloge",
+    "traduction": "Clock",
+    "pluriel": "Horloges",
+    "explication": "Instrument utilisé pour indiquer l'heure."
+  },
+  {
+    "mot": "Bibliothèque",
+    "traduction": "Bookshelf",
+    "pluriel": "Bibliothèques",
+    "explication": "Meuble destiné à ranger ou exposer des livres."
+  },
+  {
+    "mot": "Commode",
+    "traduction": "Dresser",
+    "pluriel": "Commodes",
+    "explication": "Meuble avec des tiroirs utilisé pour ranger des vêtements ou des objets personnels."
+  },
+  {
+    "mot": "Miroir",
+    "traduction": "Mirror",
+    "pluriel": "Miroirs",
+    "explication": "Surface réfléchissante utilisée pour voir son reflet."
+  },
+  {
+    "mot": "Cuisinière",
+    "traduction": "Stove",
+    "pluriel": "Cuisinières",
+    "explication": "Appareil utilisé pour cuisiner les aliments, souvent avec des plaques de cuisson."
+  },
+  {
+    "mot": "Vase",
+    "traduction": "Vase",
+    "pluriel": "Vases",
+    "explication": "Récipient utilisé pour contenir des fleurs ou pour la décoration."
+  },
+  {
+    "mot": "Balai",
+    "traduction": "Broom",
+    "pluriel": "Balais",
+    "explication": "Outil utilisé pour balayer et nettoyer le sol."
+  },
+  {
+    "mot": "Escalier",
+    "traduction": "Staircase",
+    "pluriel": "Escaliers",
+    "explication": "Structure permettant de passer d'un étage à un autre."
+  },
+  {
+    "mot": "Tableau",
+    "traduction": "Painting",
+    "pluriel": "Tableaux",
+    "explication": "Oeuvre d'art souvent accrochée aux murs pour la décoration."
+  },
+  {
+    "mot": "Ventilateur",
+    "traduction": "Fan",
+    "pluriel": "Ventilateurs",
+    "explication": "Appareil utilisé pour créer un flux d'air pour rafraîchir une pièce."
+  },
+  {
+    "mot": "Armoire",
+    "traduction": "Wardrobe",
+    "pluriel": "Armoires",
+    "explication": "Meuble fermé utilisé pour ranger des vêtements ou des accessoires."
+  },
+  {
+    "mot": "Chaudière",
+    "traduction": "Boiler",
+    "pluriel": "Chaudières",
+    "explication": "Appareil utilisé pour chauffer l'eau ou l'air dans une maison."
+  },
+  {
+    "mot": "Rideau de douche",
+    "traduction": "Shower curtain",
+    "pluriel": "Rideaux de douche",
+    "explication": "Rideau utilisé pour protéger le sol de la salle de bain des éclaboussures d'eau."
   }
 ]

@@ -1,0 +1,32 @@
+name: Update Data on GitHub
+
+on:
+  workflow_dispatch: # Permet de déclencher l'action manuellement (ou via une API)
+
+jobs:
+  update_data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Add new word entry
+        run: |
+          # Ajouter le mot dans le fichier data/words.json
+          WORD="newWord"
+          TRANSLATION="newTranslation"
+          USAGE="newUsage"
+
+          # Récupérer les données actuelles du fichier
+          DATA=$(curl -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/contents/data/words.json")
+
+          # Ajouter les nouvelles données
+          UPDATED_DATA=$(echo "$DATA" | jq '. + [{"word": "$WORD", "translation": "$TRANSLATION", "usage": "$USAGE"}]')
+
+          # Mettre à jour le fichier
+          curl -X PUT -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"message": "Update words list", "content": "'"$(echo "$UPDATED_DATA" | base64)"'"}' \
+            "https://api.github.com/repos/${{ github.repository }}/contents/data/words.json"

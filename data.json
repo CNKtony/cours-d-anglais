@@ -2,25 +2,25 @@
   {
     "mot": "Salon",
     "traduction": "Living room",
-    "pluriel": "Salons",
+    "pluriel": "Living rooms",
     "explication": "Pièce principale où les membres de la famille se détendent ou reçoivent des invités."
   },
   {
     "mot": "Cuisine",
     "traduction": "Kitchen",
-    "pluriel": "Cuisines",
+    "pluriel": "Kitchens",
     "explication": "Pièce où l'on prépare et cuisine les repas."
   },
   {
     "mot": "Chambre",
     "traduction": "Bedroom",
-    "pluriel": "Chambres",
+    "pluriel": "Bedrooms",
     "explication": "Pièce où l'on dort et garde ses affaires personnelles."
   },
   {
     "mot": "Salle de bain",
     "traduction": "Bathroom",
-    "pluriel": "Salles de bain",
+    "pluriel": "Bathrooms",
     "explication": "Pièce où l'on se lave et prend soin de son hygiène."
   },
   {
@@ -32,115 +32,115 @@
   {
     "mot": "Chaise",
     "traduction": "Chair",
-    "pluriel": "Chaises",
+    "pluriel": "Chairs",
     "explication": "Meuble sur lequel on s'assoit, souvent utilisé autour d'une table."
   },
   {
     "mot": "Réfrigérateur",
     "traduction": "Refrigerator",
-    "pluriel": "Réfrigérateurs",
+    "pluriel": "Refrigerators",
     "explication": "Appareil électroménager utilisé pour conserver les aliments au frais."
   },
   {
     "mot": "Lit",
     "traduction": "Bed",
-    "pluriel": "Lits",
+    "pluriel": "Beds",
     "explication": "Meuble utilisé pour dormir."
   },
   {
     "mot": "Lampe",
     "traduction": "Lamp",
-    "pluriel": "Lampes",
+    "pluriel": "Lamps",
     "explication": "Objet qui produit de la lumière, utilisé pour éclairer une pièce."
   },
   {
     "mot": "Fenêtre",
     "traduction": "Window",
-    "pluriel": "Fenêtres",
+    "pluriel": "Windows",
     "explication": "Ouverture dans un mur permettant de voir dehors ou de laisser entrer la lumière."
   },
   {
     "mot": "Porte",
     "traduction": "Door",
-    "pluriel": "Portes",
+    "pluriel": "Doors",
     "explication": "Structure qui permet d'entrer et de sortir d'une pièce ou d'une maison."
   },
   {
     "mot": "Placard",
     "traduction": "Closet",
-    "pluriel": "Placards",
+    "pluriel": "Closets",
     "explication": "Espace de rangement intégré dans un mur pour les vêtements, les ustensiles ou les provisions."
   },
   {
     "mot": "Télévision",
     "traduction": "Television",
-    "pluriel": "Télévisions",
+    "pluriel": "Televisions",
     "explication": "Appareil utilisé pour regarder des émissions, des films ou des séries."
   },
   {
     "mot": "Canapé",
     "traduction": "Sofa",
-    "pluriel": "Canapés",
+    "pluriel": "Sofas",
     "explication": "Meuble rembourré où plusieurs personnes peuvent s'asseoir confortablement."
   },
   {
     "mot": "Tapis",
     "traduction": "Carpet",
-    "pluriel": "Tapis",
+    "pluriel": "Carpets",
     "explication": "Objet textile posé sur le sol pour décorer ou protéger la surface."
   },
   {
     "mot": "Rideau",
     "traduction": "Curtain",
-    "pluriel": "Rideaux",
+    "pluriel": "Curtains",
     "explication": "Pièce de tissu suspendue devant une fenêtre pour bloquer la lumière ou protéger l'intimité."
   },
-    {
+  {
     "mot": "Évier",
     "traduction": "Sink",
-    "pluriel": "Éviers",
+    "pluriel": "Sinks",
     "explication": "Installé dans la cuisine ou la salle de bain, utilisé pour laver la vaisselle ou se laver les mains."
   },
   {
     "mot": "Four",
     "traduction": "Oven",
-    "pluriel": "Fours",
+    "pluriel": "Ovens",
     "explication": "Appareil utilisé pour cuire ou chauffer les aliments."
   },
   {
     "mot": "Climatiseur",
     "traduction": "Air conditioner",
-    "pluriel": "Climatiseurs",
+    "pluriel": "Air conditioners",
     "explication": "Appareil utilisé pour réguler la température et rafraîchir une pièce."
   },
   {
     "mot": "Horloge",
     "traduction": "Clock",
-    "pluriel": "Horloges",
+    "pluriel": "Clocks",
     "explication": "Instrument utilisé pour indiquer l'heure."
   },
   {
     "mot": "Bibliothèque",
     "traduction": "Bookshelf",
-    "pluriel": "Bibliothèques",
+    "pluriel": "Bookshelves",
     "explication": "Meuble destiné à ranger ou exposer des livres."
   },
   {
     "mot": "Commode",
     "traduction": "Dresser",
-    "pluriel": "Commodes",
+    "pluriel": "Dressers",
     "explication": "Meuble avec des tiroirs utilisé pour ranger des vêtements ou des objets personnels."
   },
   {
     "mot": "Miroir",
     "traduction": "Mirror",
-    "pluriel": "Miroirs",
+    "pluriel": "Mirrors",
     "explication": "Surface réfléchissante utilisée pour voir son reflet."
   },
   {
     "mot": "Cuisinière",
     "traduction": "Stove",
-    "pluriel": "Cuisinières",
+    "pluriel": "Stoves",
     "explication": "Appareil utilisé pour cuisiner les aliments, souvent avec des plaques de cuisson."
   },
   {
@@ -152,43 +152,43 @@
   {
     "mot": "Balai",
     "traduction": "Broom",
-    "pluriel": "Balais",
+    "pluriel": "Brooms",
     "explication": "Outil utilisé pour balayer et nettoyer le sol."
   },
   {
     "mot": "Escalier",
     "traduction": "Staircase",
-    "pluriel": "Escaliers",
+    "pluriel": "Staircases",
     "explication": "Structure permettant de passer d'un étage à un autre."
   },
   {
     "mot": "Tableau",
     "traduction": "Painting",
-    "pluriel": "Tableaux",
+    "pluriel": "Paintings",
     "explication": "Oeuvre d'art souvent accrochée aux murs pour la décoration."
   },
   {
     "mot": "Ventilateur",
     "traduction": "Fan",
-    "pluriel": "Ventilateurs",
+    "pluriel": "Fans",
     "explication": "Appareil utilisé pour créer un flux d'air pour rafraîchir une pièce."
   },
   {
     "mot": "Armoire",
     "traduction": "Wardrobe",
-    "pluriel": "Armoires",
+    "pluriel": "Wardrobes",
     "explication": "Meuble fermé utilisé pour ranger des vêtements ou des accessoires."
   },
   {
     "mot": "Chaudière",
     "traduction": "Boiler",
-    "pluriel": "Chaudières",
+    "pluriel": "Boilers",
     "explication": "Appareil utilisé pour chauffer l'eau ou l'air dans une maison."
   },
   {
     "mot": "Rideau de douche",
     "traduction": "Shower curtain",
-    "pluriel": "Rideaux de douche",
+    "pluriel": "Shower curtains",
     "explication": "Rideau utilisé pour protéger le sol de la salle de bain des éclaboussures d'eau."
   }
 ]

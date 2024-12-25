@@ -1,37 +1,58 @@
-name: Update Data on GitHub
+name: Update Words Data
 
 on:
-  workflow_dispatch:  # Permet de déclencher manuellement ou via une API
+  workflow_dispatch:
+    inputs:
+      word:
+        description: "Mot à ajouter"
+        required: true
+      translation:
+        description: "Traduction"
+        required: true
+      usage:
+        description: "Usage"
+        required: true
 
 jobs:
   update_data:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Install jq (JSON parser)
-        run: sudo apt-get install jq
-
-      - name: Add new word entry
+      # Vérifier les entrées reçues
+      - name: Vérifier les entrées
         run: |
-          # Variables pour les nouvelles données
-          WORD="${{ github.event.inputs.word }}"
-          TRANSLATION="${{ github.event.inputs.translation }}"
-          USAGE="${{ github.event.inputs.usage }}"
+          echo "Mot: ${{ github.event.inputs.word }}"
+          echo "Traduction: ${{ github.event.inputs.translation }}"
+          echo "Usage: ${{ github.event.inputs.usage }}"
 
-          # Télécharger le fichier actuel
+      # Télécharger le fichier JSON actuel
+      - name: Télécharger le fichier JSON actuel
+        run: |
           curl -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
             "https://raw.githubusercontent.com/${{ github.repository }}/main/data/words.json" \
             -o words.json
 
-          # Ajouter les nouvelles données
+          echo "Contenu avant mise à jour :"
+          cat words.json
+
+      # Ajouter les nouvelles données
+      - name: Ajouter les nouvelles données
+        run: |
+          WORD="${{ github.event.inputs.word }}"
+          TRANSLATION="${{ github.event.inputs.translation }}"
+          USAGE="${{ github.event.inputs.usage }}"
+
           jq ". + [{\"word\": \"$WORD\", \"translation\": \"$TRANSLATION\", \"usage\": \"$USAGE\"}]" words.json > updated_words.json
 
-          # Commit et push des données mises à jour
+          echo "Contenu après mise à jour :"
+          cat updated_words.json
+
+      # Commit et push les modifications
+      - name: Commit et pousser les modifications
+        run: |
           mv updated_words.json words.json
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit -am "Update words.json with new word"
+          git add words.json
+          git commit -m "Mise à jour du fichier words.json" || echo "Aucun changement détecté."
           git push

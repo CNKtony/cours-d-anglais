@@ -2,21 +2,25 @@
   {
     "mot": "Bonjour",
     "traduction": "Hello",
+    "pluriel": "",
     "explication": "Utilisé pour saluer quelqu'un dans la journée."
   },
   {
     "mot": "Merci",
     "traduction": "Thank you",
+    "pluriel": "",
     "explication": "Utilisé pour exprimer de la gratitude."
   },
   {
     "mot": "Au revoir",
     "traduction": "Goodbye",
+    "pluriel": "",
     "explication": "Utilisé pour dire au revoir à quelqu'un."
   },
   {
     "mot": "merci",
     "traduction": "thanks",
+    "pluriel": "",
     "explication": "Utilisé pour montrer ça gratitude à quelqu'un."
-  }
+  },
 ]

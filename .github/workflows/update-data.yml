@@ -28,8 +28,9 @@ jobs:
       # Télécharger le fichier JSON actuel
       - name: Télécharger le fichier JSON actuel
         run: |
+          echo "Téléchargement du fichier JSON existant..."
           curl -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            "https://raw.githubusercontent.com/${{ github.repository }}/main/data/words.json" \
+            -L "https://raw.githubusercontent.com/${{ github.repository }}/main/data/words.json" \
             -o words.json
 
           echo "Contenu avant mise à jour :"
@@ -42,17 +43,29 @@ jobs:
           TRANSLATION="${{ github.event.inputs.translation }}"
           USAGE="${{ github.event.inputs.usage }}"
 
+          # Ajouter l'entrée au fichier JSON existant
           jq ". + [{\"word\": \"$WORD\", \"translation\": \"$TRANSLATION\", \"usage\": \"$USAGE\"}]" words.json > updated_words.json
 
           echo "Contenu après mise à jour :"
           cat updated_words.json
 
-      # Commit et push les modifications
+      # Ajouter un commit et pousser les changements
       - name: Commit et pousser les modifications
         run: |
-          mv updated_words.json words.json
+          echo "Configuration Git..."
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global core.sshCommand "ssh -o StrictHostKeyChecking=no"
+
+          # Déplacer le fichier mis à jour
+          mv updated_words.json words.json
+
+          # Ajouter les modifications au commit
           git add words.json
-          git commit -m "Mise à jour du fichier words.json" || echo "Aucun changement détecté."
-          git push
+          git diff --cached # Vérifie les différences avant de committer
+
+          # Faire un commit
+          git commit -m "Mise à jour du fichier words.json" || echo "Aucun changement à committer"
+
+          # Push des changements
+          git push origin main

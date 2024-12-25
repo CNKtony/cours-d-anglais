@@ -1,26 +1,98 @@
 [
   {
-    "mot": "Bonjour",
-    "traduction": "Hello",
-    "pluriel": "",
-    "explication": "Utilisé pour saluer quelqu'un dans la journée."
+    "mot": "Salon",
+    "traduction": "Living room",
+    "pluriel": "Salons",
+    "explication": "Pièce principale où les membres de la famille se détendent ou reçoivent des invités."
   },
   {
-    "mot": "Merci",
-    "traduction": "Thank you",
-    "pluriel": "",
-    "explication": "Utilisé pour exprimer de la gratitude."
+    "mot": "Cuisine",
+    "traduction": "Kitchen",
+    "pluriel": "Cuisines",
+    "explication": "Pièce où l'on prépare et cuisine les repas."
   },
   {
-    "mot": "Au revoir",
-    "traduction": "Goodbye",
-    "pluriel": "",
-    "explication": "Utilisé pour dire au revoir à quelqu'un."
+    "mot": "Chambre",
+    "traduction": "Bedroom",
+    "pluriel": "Chambres",
+    "explication": "Pièce où l'on dort et garde ses affaires personnelles."
   },
   {
-    "mot": "merci",
-    "traduction": "thanks",
-    "pluriel": "",
-    "explication": "Utilisé pour montrer ça gratitude à quelqu'un."
+    "mot": "Salle de bain",
+    "traduction": "Bathroom",
+    "pluriel": "Salles de bain",
+    "explication": "Pièce où l'on se lave et prend soin de son hygiène."
   },
+  {
+    "mot": "Table",
+    "traduction": "Table",
+    "pluriel": "Tables",
+    "explication": "Meuble utilisé pour manger, travailler ou poser des objets."
+  },
+  {
+    "mot": "Chaise",
+    "traduction": "Chair",
+    "pluriel": "Chaises",
+    "explication": "Meuble sur lequel on s'assoit, souvent utilisé autour d'une table."
+  },
+  {
+    "mot": "Réfrigérateur",
+    "traduction": "Refrigerator",
+    "pluriel": "Réfrigérateurs",
+    "explication": "Appareil électroménager utilisé pour conserver les aliments au frais."
+  },
+  {
+    "mot": "Lit",
+    "traduction": "Bed",
+    "pluriel": "Lits",
+    "explication": "Meuble utilisé pour dormir."
+  },
+  {
+    "mot": "Lampe",
+    "traduction": "Lamp",
+    "pluriel": "Lampes",
+    "explication": "Objet qui produit de la lumière, utilisé pour éclairer une pièce."
+  },
+  {
+    "mot": "Fenêtre",
+    "traduction": "Window",
+    "pluriel": "Fenêtres",
+    "explication": "Ouverture dans un mur permettant de voir dehors ou de laisser entrer la lumière."
+  },
+  {
+    "mot": "Porte",
+    "traduction": "Door",
+    "pluriel": "Portes",
+    "explication": "Structure qui permet d'entrer et de sortir d'une pièce ou d'une maison."
+  },
+  {
+    "mot": "Placard",
+    "traduction": "Closet",
+    "pluriel": "Placards",
+    "explication": "Espace de rangement intégré dans un mur pour les vêtements, les ustensiles ou les provisions."
+  },
+  {
+    "mot": "Télévision",
+    "traduction": "Television",
+    "pluriel": "Télévisions",
+    "explication": "Appareil utilisé pour regarder des émissions, des films ou des séries."
+  },
+  {
+    "mot": "Canapé",
+    "traduction": "Sofa",
+    "pluriel": "Canapés",
+    "explication": "Meuble rembourré où plusieurs personnes peuvent s'asseoir confortablement."
+  },
+  {
+    "mot": "Tapis",
+    "traduction": "Carpet",
+    "pluriel": "Tapis",
+    "explication": "Objet textile posé sur le sol pour décorer ou protéger la surface."
+  },
+  {
+    "mot": "Rideau",
+    "traduction": "Curtain",
+    "pluriel": "Rideaux",
+    "explication": "Pièce de tissu suspendue devant une fenêtre pour bloquer la lumière ou protéger l'intimité."
+  }
 ]

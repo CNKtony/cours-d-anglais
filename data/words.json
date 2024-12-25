@@ -1,17 +1,2 @@
 [
-  {
-    "word": "hello",
-    "translation": "bonjour",
-    "usage": "Utilisé pour saluer quelqu'un."
-  },
-  {
-    "word": "apple",
-    "translation": "pomme",
-    "usage": "Un fruit rouge ou vert souvent consommé cru ou en jus."
-  },
-  {
-    "word": "run",
-    "translation": "courir",
-    "usage": "Action de se déplacer rapidement à pied."
-  }
 ]

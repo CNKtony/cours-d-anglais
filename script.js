@@ -8,6 +8,7 @@ fetch('data.json')
       row.innerHTML = `
         <td>${item.mot}</td>
         <td>${item.traduction}</td>
+        <td>${item.pluriel}</td>
         <td>${item.explication}</td>
       `;
       tableBody.appendChild(row);

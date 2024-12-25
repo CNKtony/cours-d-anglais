@@ -36,17 +36,6 @@ jobs:
           echo "Contenu avant mise à jour :"
           cat words.json
 
-      # Vérifier si jq est installé
-      - name: Vérifier jq
-        run: |
-          if ! command -v jq &> /dev/null
-          then
-            echo "jq could not be found, installing jq"
-            sudo apt-get install jq
-          else
-            echo "jq is installed"
-          fi
-
       # Ajouter les nouvelles données
       - name: Ajouter les nouvelles données
         run: |
@@ -54,9 +43,7 @@ jobs:
           TRANSLATION="${{ github.event.inputs.translation }}"
           USAGE="${{ github.event.inputs.usage }}"
 
-          echo "Ajout des nouvelles données..."
-
-          # Vérifier le contenu JSON et ajouter une nouvelle entrée
+          # Ajouter l'entrée au fichier JSON existant
           jq ". + [{\"word\": \"$WORD\", \"translation\": \"$TRANSLATION\", \"usage\": \"$USAGE\"}]" words.json > updated_words.json || exit 1
 
           echo "Contenu après mise à jour :"

@@ -1,7 +1,7 @@
 name: Update Data on GitHub
 
 on:
-  workflow_dispatch: # Permet de déclencher l'action manuellement (ou via une API)
+  workflow_dispatch:  # Permet de déclencher manuellement ou via une API
 
 jobs:
   update_data:
@@ -11,22 +11,27 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Install jq (JSON parser)
+        run: sudo apt-get install jq
+
       - name: Add new word entry
         run: |
-          # Ajouter le mot dans le fichier data/words.json
-          WORD="newWord"
-          TRANSLATION="newTranslation"
-          USAGE="newUsage"
+          # Variables pour les nouvelles données
+          WORD="${{ github.event.inputs.word }}"
+          TRANSLATION="${{ github.event.inputs.translation }}"
+          USAGE="${{ github.event.inputs.usage }}"
 
-          # Récupérer les données actuelles du fichier
-          DATA=$(curl -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            "https://api.github.com/repos/${{ github.repository }}/contents/data/words.json")
+          # Télécharger le fichier actuel
+          curl -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            "https://raw.githubusercontent.com/${{ github.repository }}/main/data/words.json" \
+            -o words.json
 
           # Ajouter les nouvelles données
-          UPDATED_DATA=$(echo "$DATA" | jq '. + [{"word": "$WORD", "translation": "$TRANSLATION", "usage": "$USAGE"}]')
+          jq ". + [{\"word\": \"$WORD\", \"translation\": \"$TRANSLATION\", \"usage\": \"$USAGE\"}]" words.json > updated_words.json
 
-          # Mettre à jour le fichier
-          curl -X PUT -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
-            -H "Content-Type: application/json" \
-            -d '{"message": "Update words list", "content": "'"$(echo "$UPDATED_DATA" | base64)"'"}' \
-            "https://api.github.com/repos/${{ github.repository }}/contents/data/words.json"
+          # Commit et push des données mises à jour
+          mv updated_words.json words.json
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -am "Update words.json with new word"
+          git push

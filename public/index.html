@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub API Example</title>
+</head>
+<body>
+  <ul id="wordList"></ul>
+
+  <script>
+    // Faire une requête à l'API de ton serveur pour récupérer les mots
+    fetch('/api/words')
+      .then(response => response.json())
+      .then(data => {
+        const list = document.getElementById('wordList');
+        data.forEach(word => {
+          const listItem = document.createElement('li');
+          listItem.textContent = `${word.word} (${word.translation}) - ${word.usage}`;
+          list.appendChild(listItem);
+        });
+      })
+      .catch(error => console.error('Error:', error));
+  </script>
+</body>
+</html>

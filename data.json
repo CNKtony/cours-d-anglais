@@ -1,0 +1,17 @@
+[
+  {
+    "mot": "Bonjour",
+    "traduction": "Hello",
+    "explication": "Utilisé pour saluer quelqu'un dans la journée."
+  },
+  {
+    "mot": "Merci",
+    "traduction": "Thank you",
+    "explication": "Utilisé pour exprimer de la gratitude."
+  },
+  {
+    "mot": "Au revoir",
+    "traduction": "Goodbye",
+    "explication": "Utilisé pour dire au revoir à quelqu'un."
+  }
+]

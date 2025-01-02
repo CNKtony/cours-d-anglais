@@ -21,9 +21,27 @@
       .hidden {
         display: none;
       }
+      .partie {
+        cursor: pointer;
+        padding: 10px;
+        margin: 5px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+      }
+      .partie:hover {
+        background-color: #ddd;
+      }
+      .parties {
+        margin-left: 20px;
+      }
     </style>
   </head>
   <body>
+    <h1>Les Parties de la Maison</h1>
+
+    <div id="parties">
+      <!-- Les pièces de la maison seront ajoutées ici dynamiquement -->
+    </div>
     <h1>Les Pièces de la Maison</h1>
 
     <div id="pieces">
@@ -278,6 +296,78 @@
 
       // Afficher les données dès que la page est chargée
       window.onload = displayMaisonData;
+      const partiesData = [
+        {
+          word: "maison",
+          translation: "house",
+          plureil: "houses",
+          pronunciation: "haʊs",
+          usage: "A building for human habitation.",
+          parties_de_la_maison: [
+            {
+              word: "murs",
+              translation: "walls",
+              plureil: "walls",
+              pronunciation: "wɔːlz",
+              usage:
+                "The vertical structures that form the sides of a building.",
+            },
+            {
+              word: "toit",
+              translation: "roof",
+              plureil: "roofs",
+              pronunciation: "ruːf",
+              usage: "The structure that covers a building.",
+            },
+            {
+              word: "colonnes",
+              translation: "columns",
+              plureil: "columns",
+              pronunciation: "ˈkɒləmz",
+              usage: "Tall vertical pillars used to support a structure.",
+            },
+            {
+              word: "portes",
+              translation: "doors",
+              plureil: "doors",
+              pronunciation: "dɔːz",
+              usage: "A movable structure used for closing off an entrance.",
+            },
+            {
+              word: "fenêtres",
+              translation: "windows",
+              plureil: "windows",
+              pronunciation: "ˈwɪndəʊz",
+              usage:
+                "An opening in the wall of a building, typically fitted with glass to allow light and air in.",
+            },
+          ],
+        },
+      ];
+
+      const piecesContainer = document.getElementById("parties");
+
+      partiesData.forEach((piece) => {
+        const pieceElement = document.createElement("div");
+        pieceElement.className = "partie";
+        pieceElement.innerHTML = `${piece.word} (${piece.translation})`;
+
+        const partiesContainer = document.createElement("div");
+        partiesContainer.className = "parties hidden";
+
+        piece.parties_de_la_maison.forEach((part) => {
+          const partElement = document.createElement("div");
+          partElement.innerHTML = `${part.word} (${part.translation}) - ${part.usage}`;
+          partiesContainer.appendChild(partElement);
+        });
+
+        pieceElement.appendChild(partiesContainer);
+        pieceElement.onclick = () => {
+          partiesContainer.classList.toggle("hidden");
+        };
+
+        piecesContainer.appendChild(pieceElement);
+      });
     </script>
   </body>
 </html>

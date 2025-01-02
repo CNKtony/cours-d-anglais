@@ -1,52 +1,283 @@
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Liste des mots et traductions</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background-color: #f9f9f9;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-    th, td {
-      border: 1px solid #ddd;
-      padding: 8px;
-      text-align: left;
-    }
-    th {
-      background-color: #f2f2f2;
-    }
-    .container {
-      max-width: 800px;
-      margin: auto;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Liste des mots et traductions</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Mot (Français)</th>
-          <th>Traduction</th>
-          <th>Pluriel</th>
-          <th>Explication</th>
-        </tr>
-      </thead>
-      <tbody id="tableBody">
-        <!-- Les données seront insérées ici -->
-      </tbody>
-    </table>
-  </div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maison et Objets</title>
+    <style>
+      .piece {
+        cursor: pointer;
+        padding: 10px;
+        margin: 5px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+      }
+      .piece:hover {
+        background-color: #ddd;
+      }
+      .objets {
+        margin-left: 20px;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Les Pièces de la Maison</h1>
 
-  <script src="script.js"></script>
-</body>
+    <div id="pieces">
+      <!-- Les pièces de la maison seront ajoutées ici dynamiquement -->
+    </div>
+
+    <script>
+      const maisonData = [
+        {
+          word: "cuisine",
+          translation: "kitchen",
+          plureil: "kitchens",
+          pronunciation: "kɪtʃən",
+          usage: "A room for preparing and cooking food.",
+          objets: [
+            {
+              word: "réfrigérateur",
+              translation: "fridge",
+              plureil: "fridges",
+              pronunciation: "frɪdʒ",
+              usage: "A device for keeping food and drinks cold.",
+            },
+            {
+              word: "four",
+              translation: "oven",
+              plureil: "ovens",
+              pronunciation: "ˈʌvn",
+              usage: "A device for baking or roasting food.",
+            },
+            {
+              word: "évier",
+              translation: "sink",
+              plureil: "sinks",
+              pronunciation: "sɪŋk",
+              usage: "A bowl for washing dishes or hands.",
+            },
+          ],
+        },
+        {
+          word: "chambre",
+          translation: "bedroom",
+          plureil: "bedrooms",
+          pronunciation: "ˈbɛdruːm",
+          usage: "A room for sleeping.",
+          objets: [
+            {
+              word: "lit",
+              translation: "bed",
+              plureil: "beds",
+              pronunciation: "bɛd",
+              usage: "A piece of furniture for sleeping.",
+            },
+            {
+              word: "armoire",
+              translation: "wardrobe",
+              plureil: "wardrobes",
+              pronunciation: "ˈwɔːdrəʊb",
+              usage: "A tall cupboard for storing clothes.",
+            },
+            {
+              word: "oreiller",
+              translation: "pillow",
+              plureil: "pillows",
+              pronunciation: "ˈpɪləʊ",
+              usage: "A cushion for resting your head on in bed.",
+            },
+          ],
+        },
+        {
+          word: "salon",
+          translation: "living room",
+          plureil: "living rooms",
+          pronunciation: "ˈlɪvɪŋ ruːm",
+          usage: "A room for relaxing and socialising.",
+          objets: [
+            {
+              word: "canapé",
+              translation: "sofa",
+              plureil: "sofas",
+              pronunciation: "ˈsəʊfə",
+              usage: "A comfortable seat for multiple people.",
+            },
+            {
+              word: "télévision",
+              translation: "television",
+              plureil: "televisions",
+              pronunciation: "ˈtelɪvɪʒn",
+              usage: "A device for watching programmes.",
+            },
+            {
+              word: "table basse",
+              translation: "coffee table",
+              plureil: "coffee tables",
+              pronunciation: "ˈkɒfi ˈteɪbl",
+              usage: "A low table for placing items in the living room.",
+            },
+          ],
+        },
+        {
+          word: "salle de bain",
+          translation: "bathroom",
+          plureil: "bathrooms",
+          pronunciation: "ˈbɑːθruːm",
+          usage: "A room for bathing and personal hygiene.",
+          objets: [
+            {
+              word: "douche",
+              translation: "shower",
+              plureil: "showers",
+              pronunciation: "ˈʃaʊə",
+              usage: "A place for washing your body with water.",
+            },
+            {
+              word: "toilette",
+              translation: "toilet",
+              plureil: "toilets",
+              pronunciation: "ˈtɔɪlɪt",
+              usage: "A fixture for disposing of human waste.",
+            },
+            {
+              word: "miroir",
+              translation: "mirror",
+              plureil: "mirrors",
+              pronunciation: "ˈmɪrə",
+              usage: "A reflective surface for looking at yourself.",
+            },
+          ],
+        },
+        {
+          word: "salle à manger",
+          translation: "dining room",
+          plureil: "dining rooms",
+          pronunciation: "ˈdaɪnɪŋ ruːm",
+          usage: "A room where meals are eaten.",
+          objets: [
+            {
+              word: "table",
+              translation: "table",
+              plureil: "tables",
+              pronunciation: "ˈteɪbl",
+              usage: "A piece of furniture for eating meals.",
+            },
+            {
+              word: "chaise",
+              translation: "chair",
+              plureil: "chairs",
+              pronunciation: "tʃeə",
+              usage: "A seat for one person.",
+            },
+            {
+              word: "vaisselle",
+              translation: "crockery",
+              plureil: "crockeries",
+              pronunciation: "ˈkrɒkəri",
+              usage: "Plates, cups, and dishes used for meals.",
+            },
+          ],
+        },
+        {
+          word: "bureau",
+          translation: "office",
+          plureil: "offices",
+          pronunciation: "ˈɒfɪs",
+          usage: "A room used for work or study.",
+          objets: [
+            {
+              word: "bureau",
+              translation: "desk",
+              plureil: "desks",
+              pronunciation: "dɛsk",
+              usage:
+                "A piece of furniture for working, typically with drawers and a flat surface.",
+            },
+            {
+              word: "chaise de bureau",
+              translation: "office chair",
+              plureil: "office chairs",
+              pronunciation: "ˈɒfɪs tʃɛə",
+              usage:
+                "A chair designed for use at a desk, typically with wheels and adjustable height.",
+            },
+            {
+              word: "ordinateur",
+              translation: "computer",
+              plureil: "computers",
+              pronunciation: "kəmˈpjuːtə",
+              usage: "An electronic device for processing and storing data.",
+            },
+          ],
+        },
+        {
+          word: "entrée/véranda",
+          translation: "hallway",
+          plureil: "hallways",
+          pronunciation: "ˈhɔːlweɪ",
+          usage: "A corridor or entrance area in a house.",
+          objets: [
+            {
+              word: "porte-manteau",
+              translation: "coat rack",
+              plureil: "coat racks",
+              pronunciation: "kəʊt ræk",
+              usage: "A structure for hanging coats and other garments.",
+            },
+            {
+              word: "paillasson",
+              translation: "doormat",
+              plureil: "doormats",
+              pronunciation: "ˈdɔːrmæt",
+              usage: "A mat placed outside or inside a door to wipe your feet.",
+            },
+            {
+              word: "étagère",
+              translation: "shelf",
+              plureil: "shelves",
+              pronunciation: "ʃɛlf",
+              usage:
+                "A flat horizontal surface used for storing or displaying items.",
+            },
+          ],
+        },
+        // Ajoutez d'autres pièces de la maison ici...
+      ];
+
+      // Fonction pour afficher les pièces et leurs objets
+      function displayMaisonData() {
+        const piecesContainer = document.getElementById("pieces");
+        maisonData.forEach((piece) => {
+          const pieceElement = document.createElement("div");
+          pieceElement.classList.add("piece");
+          pieceElement.textContent = piece.word;
+
+          const objetsContainer = document.createElement("div");
+          objetsContainer.classList.add("objets", "hidden"); // Cacher les objets par défaut
+
+          // Afficher les objets de la pièce
+          piece.objets.forEach((objet) => {
+            const objetElement = document.createElement("p");
+            objetElement.textContent = `${objet.word} (${objet.translation}) - ${objet.usage}`;
+            objetsContainer.appendChild(objetElement);
+          });
+
+          // Ajouter l'événement de clic
+          pieceElement.addEventListener("click", () => {
+            objetsContainer.classList.toggle("hidden"); // Montrer ou cacher les objets
+          });
+
+          piecesContainer.appendChild(pieceElement);
+          piecesContainer.appendChild(objetsContainer);
+        });
+      }
+
+      // Afficher les données dès que la page est chargée
+      window.onload = displayMaisonData;
+    </script>
+  </body>
 </html>
